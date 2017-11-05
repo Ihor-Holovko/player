@@ -6,6 +6,8 @@ app.controller('playerCtrl', function($scope) {
 		document.getElementById("txtInfo").innerHTML = text;
 	}
 	$scope.start = function() {
+		document.getElementById("iconInfo").className = "";
+		document.getElementById("txtInfo").innerHTML = "";
 		if ($scope.url != "") {
 			if (($scope.url.search(".m3u8")) != -1) {
 				if (Hls.isSupported()) {
