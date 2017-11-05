@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HLS/MPEG-DASH Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body>
+	<div ng-app="myPlayer" ng-controller="playerCtrl">
+		<div class="container-fluid container1">
+			<div class="container txtHead ">
+				<div class="col-sm-12 text-center">
+					<h1>HLS/MPEG-DASH Player</h1>
+					<p>Load it via http in a MSE-enabled browser.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container divUrl">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<form>
+						<div class="input-group has-info has-feedback">
+							<input type="url" class="form-control"
+								placeholder="link to video" ng-model="url">
+							<div class="input-group-btn">
+								<button class="btn btn-info" type="submit" ng-click="start()">
+									<i>Load</i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<div class="container-fluid container2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div id="viewport" class="col-sm-8">
+						<div class="info">
+							<span id="iconInfo" class="" style="font-size: 3em;"></span> </br> <span
+								id="txtInfo" class=""></span>
+						</div>
+						<video id="video" controls></video>
+					</div>
+					<div class="col-sm-2 "></div>
+				</div>
+			</div>
+		</div>
+		<script src="player.js"></script>
+	</div>
+</body>
+</html>
